@@ -1,0 +1,45 @@
+.nav-main{
+    background-color: #05172d;
+}
+.nav-link{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.logo-nav{
+    width: 3em;
+    margin-right: 1em;
+}
+
+.main-box{
+    padding: 4em;
+}
+.main-box-detail{
+    background-color: #05172d;
+
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    padding: 30%;
+
+}
+
+.main-box-detail:hover{
+    opacity: 0.8;
+    transition: 0.2s ease-in-out;
+}
+.main-box-detail h5{
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.icon-main{
+    width: 5em;
+    padding-bottom: 1em;
+}
+
+#logo-dms-footer{
+    width: 8em;
+
+}
