@@ -30,5 +30,19 @@ source ~/.bashrc
 
 python -V
 
+## Install Sqlite3
+
+sudo apt-get sqlite3
+
+## Install paho-mqtt for Python
+
+sudo -H pip3 install --upgrade pip
+
+pip3 install paho-mqtt
+
+## Install sqlite3 for Python
+
+pip3 install sqlite3
+
 ## RaspAp
 curl -sL https://install.raspap.com | bash
