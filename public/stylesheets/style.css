@@ -28,6 +28,14 @@ body{
 	padding: 4em 0;
 }
 
+#data .table {
+	background: #fff;
+}
+
+#data .table tbody tr:hover {
+	background: rgba(0,0,0,.035);
+}
+
 
 
 
