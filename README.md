@@ -1,6 +1,7 @@
 # dms-lite
 DMS Lite for the PAPI Project 
 
+# Install
 
 ## NodeJs
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
@@ -46,3 +47,9 @@ pip3 install sqlite3
 
 ## RaspAp
 curl -sL https://install.raspap.com | bash
+
+# Run
+
+python3 sqlwriter.py
+
+npm run start
