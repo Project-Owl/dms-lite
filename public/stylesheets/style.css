@@ -1,5 +1,6 @@
 body{
     font-family: Roboto, sans-serif;
+    background: #eee;
 }
 
 
@@ -21,8 +22,26 @@ body{
 
 
 
-/*  DATA PAGE  */
+/*  DATA PAGE */
 
 #data {
 	padding: 4em 0;
+}
+
+
+
+
+/* DUCKS PAGE */
+
+#ducks {
+	padding: 4em 0;
+}
+
+#ducks .ducks-list .duck {
+	padding: 1em 0;
+	background: #fff;
+	border-radius: 4px;
+	float: left;
+	display: block;
+	width: 20%;
 }
