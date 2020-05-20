@@ -17,12 +17,10 @@
 }
 .main-box-detail{
     background-color: #05172d;
-
     border-radius: 8px;
     color: white;
     text-align: center;
-    padding: 30%;
-
+    padding: 0;
 }
 
 .main-box-detail:hover{
