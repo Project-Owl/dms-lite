@@ -28,6 +28,12 @@ body{
 	padding: 4em 0;
 }
 
+#data #main-text{
+	border-bottom: 5px solid #05172d;
+	width: 13em;
+	font-weight: 600;
+}
+
 #data .table {
 	background: #fff;
 }
@@ -45,6 +51,11 @@ body{
 	padding: 4em 0;
 }
 
+#ducks #main-text{
+	border-bottom: 5px solid #05172d;
+	width: 13em;
+	font-weight: 600;
+}
 #ducks .ducks-list {
 	margin-left: -.75em;
 	margin-right: -.75em;
@@ -135,6 +146,22 @@ body{
 	padding: 4em 0;
 }
 
+#settings #main-text{
+	border-bottom: 5px solid #05172d;
+	width: 13em;
+	font-weight: 600;
+
+}
+
+
+/*FOOTER*/
+
+#footer-logo{
+	width: 8em;
+	position: absolute;
+	bottom: 10px;
+	left: 25px;
+}
 
 
 
