@@ -4,11 +4,14 @@ DMS Lite for the PAPI Project
 # Install
 
 ### NodeJs
+sudo apt-get update
+sudo apt-get upgrade
+
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 ### Mosquitto
-Sudo apt-get mosquitto mosquitto-clients
+sudo apt-get mosquitto mosquitto-clients
 
 ### Python
 sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev tar wget vim
