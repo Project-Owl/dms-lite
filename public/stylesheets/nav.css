@@ -15,6 +15,7 @@
 .main-box{
     padding: 4em;
 }
+
 .main-box-detail{
     background-color: #05172d;
     border-radius: 8px;
@@ -27,6 +28,7 @@
     opacity: 0.8;
     transition: 0.2s ease-in-out;
 }
+
 .main-box-detail h5{
     font-weight: 700;
     text-transform: uppercase;
@@ -39,5 +41,4 @@
 
 #logo-dms-footer{
     width: 8em;
-
 }
