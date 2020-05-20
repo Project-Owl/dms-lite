@@ -3,7 +3,7 @@ DMS Lite for the PAPI Project
 
 
 ## NodeJs
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 ## Mosquitto
@@ -14,9 +14,9 @@ sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev 
 
 wget https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tgz
 
-sudo tar zxf Python-3.8.0.tgz
+sudo tar zxf Python-3.8.3.tgz
 
-cd Python-3.8.0
+cd Python-3.8.3
 
 sudo ./configure --enable-optimizations
 
