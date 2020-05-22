@@ -34,19 +34,11 @@ function getAllData() {
       let sql = 'SELECT time_recieved, duck_id, message_id, payload FROM clusterData'
       let data = [];
 
-      db.each(sql, (err, row) => {
+      db.all(sql, (err, rows) => {
          if (err) {
             reject(err);
          }
-         console.log(row);
-         data.push(row);
-      }, (err, n) => {
-         if(err) {
-            reject(err);
-         }
-         else {
-            resolve(data);
-         }
+         resolve(rows);
       });
    });
 }
