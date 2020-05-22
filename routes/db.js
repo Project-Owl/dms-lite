@@ -48,7 +48,7 @@ router.get('/data/:duckId', function (req, res, next) {
 });
 
 router.get('/data/ducks', function (req, res, next) {
-   let sql = 'SELECT DISTINCT duck_id FROM clusterData ORDER BY duck_id'
+   let sql = 'SELECT DISTINCT duck_id FROM clusterData'
 
    db.all(sql, [], (err, rows) => {
       if (err) {
@@ -62,6 +62,20 @@ router.get('/data/ducks', function (req, res, next) {
    });
 });
 
+router.get('/data/latest/:count', function (req, res, next) {
+   let sql = 'SELECT time_recieved, duck_id, message_id, payload FROM clusterData DESC LIMIT ?'
+
+   db.all(sql, [req.params.count], (err, rows) => {
+      if (err) {
+         throw err;
+      }
+      rows.forEach((row) => {
+         console.log(row); //For debug
+      });
+
+      res.json(rows);
+   });
+});
 
 
 module.exports = router;
