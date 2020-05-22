@@ -43,7 +43,7 @@ You can initialize your database inside the project folder using these commands 
 
 sqlite3 data.db
 
-CREATE TABLE clusterData(time_recieved datetime, duck_id TEXT, message_id TEXT, payload TEXT, path TEXT);
+CREATE TABLE clusterData(timestamp datetime, duck_id TEXT, message_id TEXT, payload TEXT, path TEXT);
 
 ### Install paho-mqtt for Python
 
