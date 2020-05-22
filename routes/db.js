@@ -1,5 +1,4 @@
 var express = require('express');
-var router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 
 var db;
@@ -10,13 +9,6 @@ closeDB();
 
 // This will be updated
 // CREATE TABLE clusterData(time_recieved datetime, duck_id TEXT, message_id TEXT, payload TEXT, path TEXT);
-
-/* GET data route */
-router.get('/', function (req, res, next) {
-   res.render('db', {
-      title: 'Express'
-   });
-});
 
 function openDB() {
    db = new sqlite3.Database('data.db', (err) => {
@@ -121,4 +113,4 @@ function getLastCount(count) {
 }
 
 
-module.exports = router, getAllData, getDataByDuckId, getUniqueDucks, getLastCount;
+module.exports = {getAllData, getDataByDuckId, getUniqueDucks, getLastCount};

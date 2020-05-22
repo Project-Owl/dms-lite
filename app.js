@@ -28,7 +28,6 @@ app.use('/users', usersRouter);
 app.use('/data', dataRouter);
 app.use('/settings', settingsRouter);
 app.use('/ducks', ducksRouter);
-app.use('/db', dbRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
