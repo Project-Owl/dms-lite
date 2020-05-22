@@ -29,24 +29,26 @@ function closeDB() {
 }
 
 function getAllData() {
-   var values;
+   return new Promise((resolve, reject) => {
+      openDB();
+      let sql = 'SELECT time_recieved, duck_id, message_id, payload FROM clusterData'
+      let data = [];
 
-   openDB();
-   let sql = 'SELECT time_recieved, duck_id, message_id, payload FROM clusterData'
-
-   db.all(sql, [], (err, rows) => {
-      if (err) {
-         throw err;
-      }
-      rows.forEach((row) => {
-         console.log(row); //For debug
+      db.each(sql, (err, row) => {
+         if (err) {
+            reject(err);
+         }
+         console.log(row);
+         data.push(row);
+      }, (err, n) => {
+         if(err) {
+            reject(err);
+         }
+         else {
+            resolve(data);
+         }
       });
-
-      values = rows;
    });
-   closeDB();
-
-   return values;
 }
 
 function getDataByDuckId(duckId) {

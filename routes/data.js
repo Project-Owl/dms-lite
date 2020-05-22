@@ -8,7 +8,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/data', function (req, res, next) {
-  res.json(db.getAllData());
+  db.getAllData().then((response) => {
+    console.log(response);
+
+    res.json(response);
+  });
 });
 
 router.get('/data/:duckId', function (req, res, next) {
