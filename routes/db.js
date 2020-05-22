@@ -121,4 +121,4 @@ function getLastCount(count) {
 }
 
 
-module.exports = router;
+module.exports = router, getAllData, getDataByDuckId, getUniqueDucks, getLastCount;

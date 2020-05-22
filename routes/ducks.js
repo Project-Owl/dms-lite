@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require('db.js');
+var db = require('./db.js');
 
 /* GET ducks route */
 router.get('/', function(req, res, next) {
