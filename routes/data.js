@@ -16,15 +16,27 @@ router.get('/data', function (req, res, next) {
 });
 
 router.get('/data/:duckId', function (req, res, next) {
-  res.json(db.getDataByDuckId(req.params.duckId));
+  db.getDataByDuckId(req.params.duckId).then((response) => {
+    console.log(response);
+
+    res.json(response);
+  });
 });
 
 router.get('/data/ducks', function (req, res, next) {
-  res.json(db.getUniqueDucks());
+  db.getUniqueDucks().then((response) => {
+    console.log(response);
+
+    res.json(response);
+  });
 });
 
 router.get('/data/latest/:count', function (req, res, next) {
-  res.json(db.getLastCount(req.params.count));
+  db.getLastCount(req.params.count).then((response) => {
+    console.log(response);
+
+    res.json(response);
+  });
 });
 
 

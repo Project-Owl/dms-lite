@@ -32,7 +32,6 @@ function getAllData() {
    return new Promise((resolve, reject) => {
       openDB();
       let sql = 'SELECT time_recieved, duck_id, message_id, payload FROM clusterData'
-      let data = [];
 
       db.all(sql, (err, rows) => {
          if (err) {
@@ -40,70 +39,53 @@ function getAllData() {
          }
          resolve(rows);
       });
+      closeDB();
    });
 }
 
 function getDataByDuckId(duckId) {
-   var values;
+   return new Promise((resolve, reject) => {
+      openDB();
+      let sql = 'SELECT time_recieved, duck_id, message_id, payload, path FROM clusterData WHERE duck_Id = ?'
 
-   openDB();
-   let sql = 'SELECT time_recieved, duck_id, message_id, payload, path FROM clusterData WHERE duck_Id = ?'
-
-   db.all(sql, [duckId], (err, rows) => {
-      if (err) {
-         throw err;
-      }
-      rows.forEach((row) => {
-         console.log(row); //For debug
+      db.all(sql, [duckId], (err, rows) => {
+         if (err) {
+            reject(err);
+         }
+         resolve(rows);
       });
-
-      values = rows;
+      closeDB();
    });
-   closeDB();
-
-   return values;
 }
 
 function getUniqueDucks() {
-   var values;
+   return new Promise((resolve, reject) => {
+      openDB();
+      let sql = 'SELECT DISTINCT duck_id FROM clusterDat'
 
-   openDB();
-   let sql = 'SELECT DISTINCT duck_id FROM clusterData'
-
-   db.all(sql, [], (err, rows) => {
-      if (err) {
-         throw err;
-      }
-      rows.forEach((row) => {
-         console.log(row); //For debug
+      db.all(sql, (err, rows) => {
+         if (err) {
+            reject(err);
+         }
+         resolve(rows);
       });
-
-      values = rows;
+      closeDB();
    });
-   closeDB();
-
-   return values;
 }
 
 function getLastCount(count) {
-   var values;
+   return new Promise((resolve, reject) => {
+      openDB();
+      let sql = 'SELECT time_recieved, duck_id, message_id, payload FROM clusterData DESC LIMIT ?'
 
-   openDB();
-   let sql = 'SELECT time_recieved, duck_id, message_id, payload FROM clusterData DESC LIMIT ?'
-
-   db.all(sql, [count], (err, rows) => {
-      if (err) {
-         throw err;
-      }
-      rows.forEach((row) => {
-         console.log(row); //For debug
+      db.all(sql, [count], (err, rows) => {
+         if (err) {
+            reject(err);
+         }
+         resolve(rows);
       });
-
-      values = rows;
+      closeDB();
    });
-   closeDB();
-
-   return values;
 }
 
 
