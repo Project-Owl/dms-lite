@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var dataRouter = require('./routes/data');
 var ducksRouter = require('./routes/ducks');
 var settingsRouter = require('./routes/settings');
+var dbRouter = require('./routes/db')
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use('/users', usersRouter);
 app.use('/data', dataRouter);
 app.use('/settings', settingsRouter);
 app.use('/ducks', ducksRouter);
+app.use('/db', dbRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
