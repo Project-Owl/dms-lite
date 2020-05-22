@@ -37,7 +37,13 @@ python -V
 
 ### Install Sqlite3
 
-sudo apt-get sqlite3
+sudo apt-get install sqlite3
+
+You can initialize your database inside the project folder using these commands to create the db file and table
+
+sqlite3 data.db
+
+CREATE TABLE clusterData(timestamp datetime, duck_id TEXT, message_id TEXT, payload TEXT, path TEXT);
 
 ### Install paho-mqtt for Python
 
