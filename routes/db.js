@@ -61,15 +61,16 @@ function getDataByDuckId(duckId) {
 function getUniqueDucks() {
    return new Promise((resolve, reject) => {
       openDB();
-      let sql = 'SELECT DISTINCT duck_id FROM clusterDat'
-
+      let sql = 'SELECT DISTINCT duck_id FROM clusterData;'
+      
       db.all(sql, (err, rows) => {
+         console.log(rows);
          if (err) {
             reject(err);
          }
          resolve(rows);
       });
-      closeDB();
+      //closeDB();
    });
 }
 

@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('ducks', { title: 'Express' });
 });
 
-router.get('/data', function (req, res, next) {
+router.get('/getAllData', function (req, res, next) {
   db.getAllData().then((response) => {
     console.log(response);
 
@@ -15,7 +15,7 @@ router.get('/data', function (req, res, next) {
   });
 });
 
-router.get('/data/:duckId', function (req, res, next) {
+router.get('/getDataByDuckId/:duckId', function (req, res, next) {
   db.getDataByDuckId(req.params.duckId).then((response) => {
     console.log(response);
 
@@ -23,7 +23,7 @@ router.get('/data/:duckId', function (req, res, next) {
   });
 });
 
-router.get('/data/ducks', function (req, res, next) {
+router.get('/getUniqueDucks', function (req, res, next) {
   db.getUniqueDucks().then((response) => {
     console.log(response);
 
@@ -31,7 +31,7 @@ router.get('/data/ducks', function (req, res, next) {
   });
 });
 
-router.get('/data/latest/:count', function (req, res, next) {
+router.get('/getLastCount/:count', function (req, res, next) {
   db.getLastCount(req.params.count).then((response) => {
     console.log(response);
 
