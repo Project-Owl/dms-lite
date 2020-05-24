@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
 		});
 	});
   //res.render('ducks', { title: 'Express' });
+
 });
 
 router.get('/getAllData', function (req, res, next) {
@@ -35,6 +36,9 @@ router.get('/getUniqueDucks', function (req, res, next) {
     console.log(response);
 
     res.json(response);
+
+
+
   });
 });
 

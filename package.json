@@ -16,6 +16,7 @@
     "sqlite3": "^4.2.0"
   },
   "devDependencies": {
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "nodemon": "^2.0.4"
   }
 }
