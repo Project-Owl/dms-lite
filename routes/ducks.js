@@ -4,7 +4,14 @@ var db = require('./db.js');
 
 /* GET ducks route */
 router.get('/', function(req, res, next) {
-  res.render('ducks', { title: 'Express' });
+	db.getUniqueDucks().then((ducks) => {
+		res.render('ducks',
+		{
+			title: 'Express',
+			something: ducks
+		});
+	});
+  //res.render('ducks', { title: 'Express' });
 });
 
 router.get('/getAllData', function (req, res, next) {
