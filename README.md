@@ -1,4 +1,4 @@
-# dms-lite
+![logo](public/images/DMS-LITE.png)
 DMS Lite for the PAPI Project 
 
 # Install
