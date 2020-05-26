@@ -16,6 +16,15 @@ The PaPa Duck is running a different Firmware then the regular ClusterDuck Proto
 The PaPi and DMS LITE both need some setup before you can start seeing your data. To turn the Raspberry Pi into the PaPi you will need to install multiple modules. 
 
 NOTE: *You need an Internet Connection install the packages and the DMS-LITE, after the Raspberry Pi is turned into a Acces Point it doesn not have WiFi capabilities anymore and you wil need an LAN connection for final setup.*
+
+## Parts required
+
+- Raspberry Pi
+- Micro SD-Card 16GB or more
+  - Raspbian OS installed
+- Mouse and Keyboard
+- Wired Ethernet Connection 
+
 ### NodeJs
 sudo apt-get update
 
