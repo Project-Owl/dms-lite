@@ -6,7 +6,10 @@ The PaPi and DMS-LITE is an effort to collect all the data from a ClusterDuck Pr
 
 ## How it works 
 
-All mesages and data from the ClusterDuck Protocol network are being send to the PaPa Duck, the PaPa Duck sends all the messages to the PaPi over wifi. The PaPa Duck can send thiose messages over wifi since the PaPi is turned into a local Access point. 
+All mesages and data from the ClusterDuck Protocol network are being send to the PaPa Duck, the PaPa Duck sends all the messages to the PaPi over wifi. The PaPa Duck can send those messages over wifi since the PaPi is turned into a local Access point. 
+
+The PaPa Duck is running a different Firmware then the regular ClusterDuck Protocol PaPa example
+
 ![](public/images/CDP-NETWORK-EXPLAIN.jpg)
 
 ## Install
