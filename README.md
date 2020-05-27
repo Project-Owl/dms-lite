@@ -86,3 +86,5 @@ curl -sL https://install.raspap.com | bash
 python3 sqlwriter.py
 
 npm run start
+
+NOTE: *You need to run the two scripts in two seperate terminals.*
