@@ -10,7 +10,13 @@ All mesages and data from the [ClusterDuck Protocol](https://github.com/Code-and
 
 The PaPa Duck is running a different Firmware then the regular ClusterDuck Protocol PaPa example
 
+### Example Of ClusterDuck Protocol Network
+
 ![](public/images/CDP-NETWORK-EXPLAIN.jpg)
+
+### Local ClusterDuck Protocol Network
+
+![](public/images/PAPI-EXPLAIN.jpg)
 
 ## Parts required
 
