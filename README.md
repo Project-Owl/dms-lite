@@ -3,12 +3,14 @@
  [![Slack](https://img.shields.io/badge/Join-Slack-blue)](https://www.project-owl.com/slack)
  
 ## About
-
-The PaPi and DMS-LITE is an effort to collect all the data from a [ClusterDuck Protocol](https://github.com/Code-and-Response/ClusterDuck-Protocol) network locally. It provides a local interface to see network activity and data traffic. The PaPi was brought to live for areas when there is no internet connection available at all. The papi can store data and acts as an local MQTT broker to communicate with the PaPa Duck. 
+The PaPi and DMS-LITE is an effort to collect all the data from a [ClusterDuck Protocol](https://github.com/Code-and-Response/ClusterDuck-Protocol) network locally. It provides a local interface to see network activity and data traffic. The PaPi was brought to life for areas when there is no internet connection available at all. The papi can store data and acts as a local MQTT broker to communicate with the PaPa Duck. 
 
 ## How it works 
 
-All mesages and data from the [ClusterDuck Protocol](https://github.com/Code-and-Response/ClusterDuck-Protocol) network are being send to the PaPa Duck, the PaPa Duck sends all the messages to the PaPi over wifi. The PaPa Duck can send those messages over wifi since the PaPi is turned into a local Access point. 
+All messages and data from the [ClusterDuck Protocol](https://github.com/Code-and-Response/ClusterDuck-Protocol) network are sending to the PaPa Duck, the PaPa Duck sends all the messages to the PaPi over wifi. The PaPa Duck can send those messages over wifi since the PaPi is turned into a local Access point. The messages go through the MQTT Broker and then they are stored into a Databse.
+
+### DMS LITE
+The DMS LITE is the Lightweight version of the cloud DMS which offers more features and functionality. DMS LITE gives you simple network activity and data visuals. 
 
 The PaPa Duck is running a different Firmware then the regular ClusterDuck Protocol PaPa example
 
