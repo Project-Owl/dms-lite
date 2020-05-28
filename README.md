@@ -2,11 +2,11 @@
 
 ## About
 
-The PaPi and DMS-LITE is an effort to collect all the data from a ClusterDuck Protocol network locally. It provides a local interface to see network activity and data traffic. The PaPi was brought to live for areas when there is no internet connection available at all. The papi can store data and acts as an local MQTT broker to communicate with the PaPa Duck. 
+The PaPi and DMS-LITE is an effort to collect all the data from a [ClusterDuck Protocol](https://github.com/Code-and-Response/ClusterDuck-Protocol) network locally. It provides a local interface to see network activity and data traffic. The PaPi was brought to live for areas when there is no internet connection available at all. The papi can store data and acts as an local MQTT broker to communicate with the PaPa Duck. 
 
 ## How it works 
 
-All mesages and data from the ClusterDuck Protocol network are being send to the PaPa Duck, the PaPa Duck sends all the messages to the PaPi over wifi. The PaPa Duck can send those messages over wifi since the PaPi is turned into a local Access point. 
+All mesages and data from the [ClusterDuck Protocol](https://github.com/Code-and-Response/ClusterDuck-Protocol) network are being send to the PaPa Duck, the PaPa Duck sends all the messages to the PaPi over wifi. The PaPa Duck can send those messages over wifi since the PaPi is turned into a local Access point. 
 
 The PaPa Duck is running a different Firmware then the regular ClusterDuck Protocol PaPa example
 
