@@ -11,7 +11,10 @@ var ducksRouter = require('./routes/ducks');
 var settingsRouter = require('./routes/settings');
 var dbRouter = require('./routes/db')
 
+
+
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,6 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

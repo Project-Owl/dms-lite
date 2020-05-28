@@ -12,7 +12,9 @@ router.get('/', function(req, res, next) {
           title: 'Express',
           something: ducks
         });
+
   });
+
 });
 
 router.get('/getAllData', function (req, res, next) {
@@ -46,5 +48,6 @@ router.get('/getLastCount/:count', function (req, res, next) {
     res.json(response);
   });
 });
+
 
 module.exports = router;

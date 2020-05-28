@@ -4,6 +4,7 @@
     <%- include partials/head.ejs %>
     <%- include partials/nav.ejs %>
   </head>
+
   <body>
   	<div id="ducks">
 	  	<div class="container">
@@ -28,7 +29,7 @@
 											<div class="row">
 												<div class="col-sm-12">
 													<p class="mid"><%= duck.duck_id %></p>
-													<p class="payload">	Test*Test* Lorem ipsum dolor</p>
+													<p class="payload">	<%= duck.message_id %></p>
 												</div>
 											</div>
 											<p class="updated">Updated: 14:17 5/11/2020</p>
@@ -43,4 +44,10 @@
     </div>
     <%- include partials/footer.ejs %>
   </body>
+  <script>
+	  function reloadThePage(){
+		  window.location.reload();
+	  }
+	  setInterval(reloadThePage,8000)
+  </script>
 </html>

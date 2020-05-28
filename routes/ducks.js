@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var db = require('./db.js');
+var $ = require('jquery');
+
+
+
 
 /* GET ducks route */
 router.get('/', function(req, res, next) {
@@ -10,6 +14,7 @@ router.get('/', function(req, res, next) {
 			title: 'Express',
 			something: ducks
 		});
+
 	});
   //res.render('ducks', { title: 'Express' });
 
@@ -47,7 +52,10 @@ router.get('/getLastCount/:count', function (req, res, next) {
     console.log(response);
 
     res.json(response);
+
   });
 });
+
+
 
 module.exports = router;
