@@ -20,6 +20,8 @@ The PaPa Duck is running a different Firmware then the regular ClusterDuck Proto
 - Mouse and Keyboard
 - Wired Ethernet Connection 
 
+- Latest Copy of [ClusterDuck Protocol](https://github.com/Code-and-Response/ClusterDuck-Protocol)
+
 ## How To Install
 The PaPi and DMS LITE both need some setup before you can start seeing your data. To turn the Raspberry Pi into the PaPi you will need to install multiple modules. 
 
