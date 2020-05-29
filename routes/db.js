@@ -31,7 +31,7 @@ function closeDB() {
 function getAllData() {
    return new Promise((resolve, reject) => {
       openDB();
-      let sql = 'SELECT time_recieved, duck_id, message_id, payload FROM clusterData'
+      let sql = 'SELECT time_recieved, duck_id, message_id, payload FROM clusterData ORDER BY time_recieved DESC'
 
       db.all(sql, (err, rows) => {
          if (err) {
