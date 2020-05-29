@@ -89,5 +89,20 @@ function getLastCount(count) {
    });
 }
 
+function getDuckPlusData() {
+   return new Promise((resolve, reject) => {
+      openDB();
+      let sql = 'SELECT time_recieved, duck_id, message_id, payload FROM ( SELECT ROW_NUMBER() OVER ( PARTITION BY duck_id ORDER BY time_recieved DESC ) RowNum, time_recieved, duck_id, message_id, payload FROM clusterData ) WHERE RowNum = 1;'
 
-module.exports = {getAllData, getDataByDuckId, getUniqueDucks, getLastCount};
+      db.all(sql, (err, rows) => {
+         if (err) {
+            reject(err);
+         }
+         resolve(rows);
+      });
+      closeDB();
+   });
+}
+
+
+module.exports = {getAllData, getDataByDuckId, getUniqueDucks, getLastCount, getDuckPlusData};

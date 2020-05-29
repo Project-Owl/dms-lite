@@ -8,7 +8,7 @@ var $ = require('jquery');
 
 /* GET ducks route */
 router.get('/', function(req, res, next) {
-	db.getUniqueDucks().then((ducks) => {
+	db.getDuckPlusData().then((ducks) => {
 		res.render('ducks',
 		{
 			title: 'Express',
