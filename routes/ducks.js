@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 			title: 'Express',
 			something: ducks
 		});
-		console.log(ducks)
+		// console.log(ducks)
 
 	});
   //res.render('ducks', { title: 'Express' });
@@ -56,6 +56,12 @@ router.get('/getLastCount/:count', function (req, res, next) {
 
   });
 });
+
+
+
+new Date().toLocaleString()
+
+
 
 
 

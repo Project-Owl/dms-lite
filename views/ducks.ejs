@@ -1,54 +1,77 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <%- include partials/head.ejs %>
     <%- include partials/nav.ejs %>
-  </head>
+</head>
 
-  <body>
-  	<div id="ducks">
-	  	<div class="container">
-		    <div class="row">
-		      <div class="col-sm-12">
-		      	<h4 id="main-text">Ducks in your network</h4>
+<body>
+<div id="ducks">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 id="main-text">Ducks in your network</h4>
 
-		      	<div class="ducks-list">
+                <div class="ducks-list">
 
-							<% something.forEach(function(duck) { %>
-								<div class="duck">
-									<div class="inner">
-										<div class="container-fluid">
-											<div class="row">
-												<div class="col-sm-7 identity">
-													<div class="icon"><img src="/images/duck_dark.png" alt="data"><%= duck.duck_id %></div>
-												</div>
-												<div class="col-sm-5 status">
-													<p>offline</p>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-sm-12">
-													<p class="mid"><%= duck.message_id %></p>
-													<p class="payload">	<%= duck.payload%></p>
-													<p class="path">	<%= duck.path%></p>
-												</div>
-											</div>
-											<p class="updated"><%= duck.time_recieved%></p>
-										</div>
-									</div>
-								</div>
-							<% }); %>
-		      	</div>
-		      </div>
-			</div>
-		</div>
+                    <% something.forEach(function(duck) { %>
+                        <div class="duck">
+                            <div class="inner">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-7 identity">
+                                            <div class="icon offline"><img src="/images/duck_dark.png"
+                                                                           alt="data"><%= duck.duck_id %></div>
+                                        </div>
+                                        <div class="col-sm-5 status offline">
+                                            <p>offline</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <p class="mid"><%= duck.message_id %></p>
+                                            <p class="payload">    <%= duck.payload %></p>
+                                            <p class="path">    <%= duck.path %></p>
+                                        </div>
+                                    </div>
+                                    <p class="updated"><%= duck.time_recieved %></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            var T = "<%= duck.time_recieved %>";
+                            var Tnow = Date().toLocaleString();
+                            var TND = Date.parse(Tnow)
+
+                            var TD = Date.parse(T)
+
+                            var TimeDif = TND - TD;
+
+                            if ((TND - TD) < 40370000) {
+                                $(".duck").last().find(".status").addClass("online").find("p").html("online");
+                                $(".duck").last().find(".icon").addClass("online");
+
+                            } else {
+                                $(".duck").last().find(".status").addClass("offline").find("p").html("offline");
+                                $(".duck").last().find(".icon").addClass("offline");
+                            }
+
+                        </script>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
     </div>
-    <%- include partials/footer.ejs %>
-  </body>
-  <script>
-	  function reloadThePage(){
-		  window.location.reload();
-	  }
-	  setInterval(reloadThePage,20000)
-  </script>
+</div>
+<%- include partials/footer.ejs %>
+</body>
+<script>
+
+    function reloadThePage() {
+        window.location.reload();
+    }
+
+    setInterval(reloadThePage, 100000)
+</script>
 </html>

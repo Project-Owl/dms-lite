@@ -75,12 +75,22 @@ body{
 	cursor: pointer;
 }
 
-#ducks .ducks-list .duck .icon {
+
+#ducks .ducks-list .duck .icon.offline {
 	font-weight: 700;
 	line-height: 1.25em;
 	padding: .25em .35em .15em;
 	background: rgba(255,87,87,.26);
 	border: 1px solid #ff5757;
+	border-radius: 5px;
+	display: inline-block;
+}
+#ducks .ducks-list .duck .icon.online {
+	font-weight: 700;
+	line-height: 1.25em;
+	padding: .25em .35em .15em;
+	background: rgba(127, 255, 0, 0.5);
+	border: 1px solid chartreuse;
 	border-radius: 5px;
 	display: inline-block;
 }
@@ -96,15 +106,29 @@ body{
 #ducks .ducks-list .duck .status {
 	margin-bottom: .75em;
 }
-
 #ducks .ducks-list .duck .status p {
+	display: none;
+}
+
+#ducks .ducks-list .duck .status.offline p {
 	margin: 0;
 	text-transform: uppercase;
 	color: red;
 	font-size: .6em;
 	text-align: right;
 	line-height: 2.5em;
+	display: block;
 }
+#ducks .ducks-list .duck .status.online  p{
+	margin: 0;
+	text-transform: uppercase;
+	color: chartreuse;
+	font-size: .6em;
+	text-align: right;
+	line-height: 2.5em;
+	display: block;
+}
+
 
 
 #ducks .ducks-list .duck .mid {
