@@ -28,11 +28,12 @@
 											</div>
 											<div class="row">
 												<div class="col-sm-12">
-													<p class="mid"><%= duck.duck_id %></p>
-													<p class="payload">	<%= duck.message_id %></p>
+													<p class="mid"><%= duck.message_id %></p>
+													<p class="payload">	<%= duck.payload%></p>
+													<p class="path">	<%= duck.path%></p>
 												</div>
 											</div>
-											<p class="updated">Updated: 14:17 5/11/2020</p>
+											<p class="updated"><%= duck.time_recieved%></p>
 										</div>
 									</div>
 								</div>
@@ -48,6 +49,6 @@
 	  function reloadThePage(){
 		  window.location.reload();
 	  }
-	  setInterval(reloadThePage,8000)
+	  setInterval(reloadThePage,20000)
   </script>
 </html>

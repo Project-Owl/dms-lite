@@ -117,7 +117,13 @@ body{
 #ducks .ducks-list .duck .payload {
 	font-size: .85em;
 	font-weight: 400;
-	min-height: 4em;
+	min-height: 3em;
+	word-wrap: break-word
+}
+#ducks .ducks-list .duck .path {
+	font-size: .85em;
+	font-weight: 400;
+	min-height: 2em;
 }
 
 #ducks .ducks-list .duck .updated {
@@ -152,6 +158,36 @@ body{
 	font-weight: 600;
 
 }
+#settings .main-info-text{
+	padding: 1em;
+
+}
+
+#settings .main-info-text-box{
+	background-color: #d4d4d4;
+	border-radius: 8px;
+	padding: 1em;
+
+}
+#settings .main-info {
+
+	padding: 1em;
+
+
+}
+
+#settings .main-info .settngs-logo{
+	width: 12em;
+	margin-right: 4em;
+}
+
+#settings .main-info-logo{
+	background-color: #d4d4d4;
+	border-radius: 8px;
+	padding: 1em;
+}
+
+
 
 
 /*FOOTER*/

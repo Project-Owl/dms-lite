@@ -31,7 +31,7 @@ function closeDB() {
 function getAllData() {
    return new Promise((resolve, reject) => {
       openDB();
-      let sql = 'SELECT time_recieved, duck_id, message_id, payload FROM clusterData ORDER BY time_recieved DESC'
+      let sql = 'SELECT time_recieved, duck_id, message_id, payload, path FROM clusterData ORDER BY time_recieved DESC'
 
       db.all(sql, (err, rows) => {
          if (err) {
@@ -77,7 +77,7 @@ function getUniqueDucks() {
 function getLastCount(count) {
    return new Promise((resolve, reject) => {
       openDB();
-      let sql = 'SELECT time_recieved, duck_id, message_id, payload FROM clusterData DESC LIMIT ?'
+      let sql = 'SELECT time_recieved, duck_id, message_id, payload, path FROM clusterData DESC LIMIT ?'
 
       db.all(sql, [count], (err, rows) => {
          if (err) {
@@ -92,7 +92,7 @@ function getLastCount(count) {
 function getDuckPlusData() {
    return new Promise((resolve, reject) => {
       openDB();
-      let sql = 'SELECT time_recieved, duck_id, message_id, payload FROM ( SELECT ROW_NUMBER() OVER ( PARTITION BY duck_id ORDER BY time_recieved DESC ) RowNum, time_recieved, duck_id, message_id, payload FROM clusterData ) WHERE RowNum = 1;'
+      let sql = 'SELECT time_recieved, duck_id, message_id, payload, path FROM ( SELECT ROW_NUMBER() OVER ( PARTITION BY duck_id ORDER BY time_recieved DESC ) RowNum, time_recieved, duck_id, message_id, payload, path FROM clusterData ) WHERE RowNum = 1;'
 
       db.all(sql, (err, rows) => {
          if (err) {
