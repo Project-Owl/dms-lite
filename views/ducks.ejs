@@ -34,13 +34,13 @@
                                             <p class="path">    <%= duck.path %></p>
                                         </div>
                                     </div>
-                                    <p class="updated"><%= duck.time_recieved %></p>
+                                    <p class="updated"><%= duck.timestamp %></p>
                                 </div>
                             </div>
                         </div>
 
                         <script>
-                            var T = "<%= duck.time_recieved %>";
+                            var T = "<%= duck.timestamp %>";
                             var Tnow = Date().toLocaleString();
                             var TND = Date.parse(Tnow)
 
