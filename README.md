@@ -49,7 +49,7 @@ NOTE: *You need an Internet Connection install the packages and the DMS-LITE, af
 ### Mosquitto
 `sudo apt-get mosquitto mosquitto-clients`
 
-### Python
+### Python (if Python 3 is not installed or set to default) 
 `sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev tar wget vim`
 
 `wget https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tgz`
