@@ -8,7 +8,7 @@ openDB();
 closeDB();
 
 // This will be updated
-// CREATE TABLE clusterData(time_recieved datetime, duck_id TEXT, message_id TEXT, payload TEXT, path TEXT);
+// CREATE TABLE clusterData(timestamp datetime, duck_id TEXT, message_id TEXT, payload TEXT, path TEXT);
 
 function openDB() {
    db = new sqlite3.Database('data.db', (err) => {
@@ -31,7 +31,7 @@ function closeDB() {
 function getAllData() {
    return new Promise((resolve, reject) => {
       openDB();
-      let sql = 'SELECT time_recieved, duck_id, message_id, payload, path FROM clusterData ORDER BY time_recieved DESC'
+      let sql = 'SELECT timestamp, duck_id, message_id, payload, path FROM clusterData ORDER BY timestamp DESC'
 
       db.all(sql, (err, rows) => {
          if (err) {
@@ -46,7 +46,7 @@ function getAllData() {
 function getDataByDuckId(duckId) {
    return new Promise((resolve, reject) => {
       openDB();
-      let sql = 'SELECT time_recieved, duck_id, message_id, payload, path FROM clusterData WHERE duck_Id = ?'
+      let sql = 'SELECT timestamp, duck_id, message_id, payload, path FROM clusterData WHERE duck_Id = ?'
 
       db.all(sql, [duckId], (err, rows) => {
          if (err) {
@@ -77,7 +77,7 @@ function getUniqueDucks() {
 function getLastCount(count) {
    return new Promise((resolve, reject) => {
       openDB();
-      let sql = 'SELECT time_recieved, duck_id, message_id, payload, path FROM clusterData DESC LIMIT ?'
+      let sql = 'SELECT timestamp, duck_id, message_id, payload, path FROM clusterData DESC LIMIT ?'
 
       db.all(sql, [count], (err, rows) => {
          if (err) {
@@ -92,7 +92,7 @@ function getLastCount(count) {
 function getDuckPlusData() {
    return new Promise((resolve, reject) => {
       openDB();
-      let sql = 'SELECT time_recieved, duck_id, message_id, payload, path FROM ( SELECT ROW_NUMBER() OVER ( PARTITION BY duck_id ORDER BY time_recieved DESC ) RowNum, time_recieved, duck_id, message_id, payload, path FROM clusterData ) WHERE RowNum = 1;'
+      let sql = 'SELECT timestamp, duck_id, message_id, payload, path FROM ( SELECT ROW_NUMBER() OVER ( PARTITION BY duck_id ORDER BY timestamp DESC ) RowNum, timestamp, duck_id, message_id, payload, path FROM clusterData ) WHERE RowNum = 1;'
 
       db.all(sql, (err, rows) => {
          if (err) {
