@@ -31,5 +31,5 @@ echo '##install sqlite3 for python'
 pip3 install sqlite3
 
 echo '##install RaspAp'
-curl -sL https://install.raspap.com | bash -y
+curl -sL https://install.raspap.com | bash 
 
