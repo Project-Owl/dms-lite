@@ -17,7 +17,7 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
 sudo apt-get install nodejs -y
 
 echo '##installing Mosquitto...'
-sudo apt-get install mosquitto mosquitto-clients
+sudo apt-get install mosquitto mosquitto-clients -y
 
 
 echo '##installing Sqlite3'
