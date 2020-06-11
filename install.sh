@@ -21,7 +21,7 @@ sudo apt-get install mosquitto mosquitto-clients -y
 
 
 echo '##installing Sqlite3'
-sudo apt-get install Sqlite3 -y
+sudo apt-get install sqlite3 -y
 
 echo '##installing paho-mqtt for python'
 sudo -H pip3 install --upgrade pip
