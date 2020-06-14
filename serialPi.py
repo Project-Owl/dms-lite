@@ -14,8 +14,8 @@ theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 while True:
      read_serial=ser.readline()
      print(read_serial)
-     result = (theTime + "\t" + str(read_serial.payload))
-     text = json.loads(read_serial.payload)
+     result = (theTime + "\t" + str(read_serial))
+     text = json.loads(read_serial)
      print (json.dumps(text))
      writeToDb(theTime, text["DeviceID"], text["MessageID"], text["Payload"], text["path"])
   
