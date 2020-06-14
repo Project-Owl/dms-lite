@@ -7,7 +7,7 @@ import serial
 # dbFile = "data.db"
 
   
-# ser = serial.Serial('/dev/ttyUSB0',115200)
+ser = serial.Serial('/dev/ttyUSB0',115200)
 # theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
 
