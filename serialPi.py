@@ -1,5 +1,5 @@
-# from time import gmtime, strftime
-# import sqlite3
+from time import gmtime, strftime
+import sqlite3
 import serial
 # from sqlite3 import Error
 # import json
