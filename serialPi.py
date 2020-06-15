@@ -15,10 +15,7 @@ theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
 
 	
-def getData(payload):
-     
-     print (json.dumps(payload))
-     writeToDb(theTime, payload["DeviceID"], payload["MessageID"], payload["Payload"], payload["path"])
+
 
 
 while True:
@@ -36,6 +33,11 @@ def writeToDb(theTime, duckId, messageId, payload, path):
         conn.close()
     except Error as e:
         print(e)
+	
+def getData(payload):
+     
+     print (json.dumps(payload))
+     writeToDb(theTime, payload["DeviceID"], payload["MessageID"], payload["Payload"], payload["path"])
 	
 	
 
