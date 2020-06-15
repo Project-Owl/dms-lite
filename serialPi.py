@@ -9,15 +9,6 @@ dbFile = "data.db"
 
   
 ser = serial.Serial('/dev/ttyUSB0',115200)
-theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-
-
-
-
-	
-
-
-
 
    
 def writeToDb(theTime, duckId, messageId, payload, path):
@@ -32,6 +23,7 @@ def writeToDb(theTime, duckId, messageId, payload, path):
         print(e)
           
 while True:
+    theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
     payload=ser.readline()
     print(payload)
     print (json.dumps(payload))
