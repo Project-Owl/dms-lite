@@ -11,6 +11,11 @@ dbFile = "data.db"
 ser = serial.Serial('/dev/ttyUSB0',115200)
 theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
+while True:
+    payload=ser.readline()
+    print(payload)
+#     getData(payload)
+
 
 
 	
@@ -31,10 +36,7 @@ def writeToDb(theTime, duckId, messageId, payload, path):
         print(e)
 	
 	
-while True:
-    payload=ser.readline()
-    print(payload)
-    getData(payload)
+
 
 try:
     db = sqlite3.connect(dbFile)
