@@ -27,7 +27,8 @@ while True:
     payload = ser.readline()
     print(payload.decode('utf8'))
     p = payload.decode('utf8')
-    writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
+    print(p)
+#     writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
 
 try:
     db = sqlite3.connect(dbFile)
