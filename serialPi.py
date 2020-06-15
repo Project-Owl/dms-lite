@@ -18,10 +18,7 @@ theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
 
 
-while True:
-    payload=ser.readline()
-    print(payload)
-    getData(payload)
+
    
 def writeToDb(theTime, duckId, messageId, payload, path):
     conn = sqlite3.connect(dbFile)
@@ -33,14 +30,12 @@ def writeToDb(theTime, duckId, messageId, payload, path):
         conn.close()
     except Error as e:
         print(e)
-	
-def getData(payload):
-     
-     print (json.dumps(payload))
-     writeToDb(theTime, payload["DeviceID"], payload["MessageID"], payload["Payload"], payload["path"])
-	
-	
-
+          
+while True:
+    payload=ser.readline()
+    print(payload)
+    print (json.dumps(payload))
+    writeToDb(theTime, payload["DeviceID"], payload["MessageID"], payload["Payload"], payload["path"])
 
 try:
     db = sqlite3.connect(dbFile)
