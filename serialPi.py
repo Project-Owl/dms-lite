@@ -26,7 +26,7 @@ while True:
     theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
     payload=ser.readline()
     print(payload)
-    payload = json.dumps(payload)
+    payload = json.loads(payload)
     writeToDb(theTime, payload["DeviceID"], payload["MessageID"], payload["Payload"], payload["path"])
 
 try:
