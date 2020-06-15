@@ -25,9 +25,8 @@ def writeToDb(theTime, duckId, messageId, payload, path):
 while True:
     theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
     payload=ser.readline()
-    print(payload)
-    payload = json.loads(payload)
-    writeToDb(theTime, payload["DeviceID"], payload["MessageID"], payload["Payload"], payload["path"])
+    p = json.loads(payload)
+    writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
 
 try:
     db = sqlite3.connect(dbFile)
