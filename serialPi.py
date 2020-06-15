@@ -27,7 +27,8 @@ while True:
     payload = ser.readline()
     print(payload.decode('utf8'))
     p = payload.decode('utf8')
-    print(p)
+    a = json.loads(p)
+    print(a)
 #     writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
 
 try:
