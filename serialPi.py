@@ -29,7 +29,7 @@ while True:
     prstrip = payload.rstrip().decode('utf8')
     if len(prstrip) >0:
       print(prstrip)
-#       a = json.loads(payload.decode('utf8').replace("'", '"'))
+      a = json.loads(prstrip)
 
 #     writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
 
