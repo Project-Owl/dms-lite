@@ -26,8 +26,8 @@ while True:
     theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
     payload = ser.readline()
     print(payload.rstrip())
-#     if len(payload) >0:
-#       print(payload.decode('utf8'))
+    if len(payload) >0:
+      print(payload.decode('utf8'))
 #       a = json.loads(payload.decode('utf8').replace("'", '"'))
 
 #     writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
