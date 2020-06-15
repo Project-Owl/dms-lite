@@ -20,9 +20,9 @@ while True:
 def getData(payload):
   try: 
     json_object = json.loads(payload) 
-     text = json.loads(payload)
-     print (json.dumps(text))
-     writeToDb(theTime, text["DeviceID"], text["MessageID"], text["Payload"], text["path"])
+    text = json.loads(payload)
+    print (json.dumps(text))
+    writeToDb(theTime, text["DeviceID"], text["MessageID"], text["Payload"], text["path"])
  except  Error as e:
     print("Not a Duck Message")
   
