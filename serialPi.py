@@ -31,7 +31,7 @@ while True:
       print(prstrip)
       a = json.loads(prstrip)
 
-#     writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
+    writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
 
 try:
     db = sqlite3.connect(dbFile)
