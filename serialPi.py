@@ -29,9 +29,16 @@ while True:
     prstrip = payload.rstrip().decode('utf8')
     if len(prstrip) >0:
       print(prstrip)
-      p = json.loads(prstrip)
-      writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
+      try:
+        p = json.loads(prstrip)
+        writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
+      except 
+         print(prstrip)
+        
+        
+      
 
+      
 try:
     db = sqlite3.connect(dbFile)
     db.cursor().execute("CREATE TABLE IF NOT EXISTS clusterData (timestamp datetime, duck_id TEXT, message_id TEXT, payload TEXT, path TEXT)")
