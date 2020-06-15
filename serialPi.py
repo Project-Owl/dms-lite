@@ -16,9 +16,9 @@ theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
 	
 def getData(payload):
-     text = json.loads(payload)
+     
      print (json.dumps(text))
-     writeToDb(theTime, text["DeviceID"], text["MessageID"], text["Payload"], text["path"])
+     writeToDb(theTime, payload["DeviceID"], payload["MessageID"], payload["Payload"], payload["path"])
 
 
 while True:
