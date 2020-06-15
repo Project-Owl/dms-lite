@@ -32,7 +32,7 @@ while True:
       try:
         p = json.loads(prstrip)
         writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
-      except 
+      except:
          print(prstrip)
         
         
