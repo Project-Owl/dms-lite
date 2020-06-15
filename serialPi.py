@@ -1,5 +1,6 @@
 
 from time import gmtime, strftime
+from ast import literal_eval
 import sqlite3
 import serial
 from sqlite3 import Error
@@ -25,7 +26,7 @@ def writeToDb(theTime, duckId, messageId, payload, path):
 while True:
     theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
     payload = ser.readline()
-    p = json.loads(payload)
+    p = literal_eval(payload)
     writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
 
 try:
