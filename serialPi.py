@@ -15,14 +15,10 @@ theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
 	
 def getData(payload):
-    try: 
-         json_object = json.loads(payload) 
-         text = json.loads(payload)
-         print (json.dumps(text))
-         writeToDb(theTime, text["DeviceID"], text["MessageID"], text["Payload"], text["path"])
-    except  Error as e:
-         print("Not a Duck Message")
-  
+     text = json.loads(payload)
+     print (json.dumps(text))
+     writeToDb(theTime, text["DeviceID"], text["MessageID"], text["Payload"], text["path"])
+   
 def writeToDb(theTime, duckId, messageId, payload, path):
     conn = sqlite3.connect(dbFile)
     c = conn.cursor()
