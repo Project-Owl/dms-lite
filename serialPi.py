@@ -24,7 +24,7 @@ def writeToDb(theTime, duckId, messageId, payload, path):
           
 while True:
     theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-    payload=ser.readline()
+    payload = ser.readline()
     p = json.loads(payload)
     writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
 
