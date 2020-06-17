@@ -39,7 +39,7 @@ The PaPi and DMS LITE both need some setup before you can start seeing your data
 
 NOTE: *You need an Internet Connection to install the packages and the DMS LITE application. After the Raspberry Pi is turned into an Access Point it doesn't have WiFi capabilities anymore and you will need a LAN connection for final setup.*
 
-## Fast Script Install 
+## Script Install 
 Both Raspbian images have Python 2 preinstalled but Raspbian Lite does not have python 3 preinstalled. But you will need to set you Pi to use python 3 as default.
 
 1. check your python version by running: python --version
@@ -50,27 +50,36 @@ now try this again python --version you should see your default is python 3 now.
 
 ### now you can run the script 
 #### For Usb Serial 
-1. chmod u+x Serialinstall.sh will make the code excutable 
+1. chmod u+x Serial-install.sh will make the code excutable 
 2. ./install.sh will make the code run 
 3. sit back and kick up your feet because install will take a bit
 
-#### For Wifi Acces Point 
-1. chmod u+x WiFiinstall.sh will make the code excutable 
-2. ./install.sh will make the code run 
-3. sit back and kick up your feet because install will take a bit
-
-
-
-### RaspAp
-
-
-# Run
+After you have installed the required dependencies you can the two scripts.
 
 `python3 sqlwriter.py`
 
 `npm run start`
 
 NOTE: *You need to run the two scripts in two separate terminals.*
+
+#### For Wifi Acces Point 
+1. chmod u+x WiFi-install.sh will make the code excutable 
+2. ./install.sh will make the code run 
+3. sit back and kick up your feet because install will take a bit
+
+After you have installed the required dependencies you can the two scripts.
+
+`python3 sqlwriter.py`
+
+`npm run start`
+
+NOTE: *You need to run the two scripts in two separate terminals.*
+
+
+
+
+
+
 
 
 ![logo](public/images/footer.png)
