@@ -23,4 +23,5 @@ echo '##install pyserial'
 pip install pyserial
 
 echo '##install node dependecies'
-sudo npm install 
+npm install sqlite3
+npm install 
