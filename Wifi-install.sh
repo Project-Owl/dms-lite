@@ -31,7 +31,7 @@ echo '##install sqlite3 for python'
 pip3 install sqlite3
 
 echo '##install node packages'
-sudo npm install s
+sudo npm install 
 
 echo '##install RaspAp'
 curl --fsSL https://install.raspap.com | bash -y 
