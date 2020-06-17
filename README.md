@@ -56,7 +56,7 @@ now try this again python --version you should see your default is python 3 now.
 
 After you have installed the required dependencies you can the two scripts.
 
-`python3 sqlwriter.py`
+`python3 Serial_sqlwriter.py`
 
 `npm run start`
 
@@ -69,7 +69,7 @@ NOTE: *You need to run the two scripts in two separate terminals.*
 
 After you have installed the required dependencies you can the two scripts.
 
-`python3 sqlwriter.py`
+`python3 Wifi_sqlwriter.py`
 
 `npm run start`
 
