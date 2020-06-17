@@ -5,9 +5,9 @@
 ## About
 The PaPi and DMS LITE is a collaborative effort to collect all the data from a [ClusterDuck Protocol](https://github.com/Code-and-Response/ClusterDuck-Protocol) network locally. It provides a local interface to see network activity and data traffic. The PaPi was brought to life for areas when there is no internet connection available at all. The PaPi can store data and acts as a local MQTT broker to communicate with the PaPa Duck. 
 
-## How it works 
+## How it Works
+To get your data into the PaPi there are two different ways. A USB Serial connection or by WiFi. With the Serial connection the Raspberry Pi reads the incoming messages from the serial monitor by a wired connection from the papaduck and writes the data to the database. With the Wifi connection the Raspberry pi turns into a Acces point and the Papa Ducks sends data over WiFi which then gets recieved by a MQTT broker that then writes ther data to the database.
 
-All messages and data from the [ClusterDuck Protocol](https://github.com/Code-and-Response/ClusterDuck-Protocol) network are sending to the PaPa Duck, the PaPa Duck sends all the messages to the PaPi over wifi. The PaPa Duck can send those messages over wifi since the PaPi is turned into a local Access point. The messages go through the MQTT Broker and then they are stored into a Database.
 
 ### DMS LITE
 The DMS LITE is the Lightweight version of the cloud DMS, which offers more features and functionality. DMS LITE gives you simple network activity and data visuals. 
@@ -32,6 +32,8 @@ The PaPa Duck is running a different Firmware then the regular ClusterDuck Proto
 
 - Latest Copy of [ClusterDuck Protocol](https://github.com/Code-and-Response/ClusterDuck-Protocol)
 
+
+# Setup 
 ## How To Install
 The PaPi and DMS LITE both need some setup before you can start seeing your data. To turn the Raspberry Pi into the PaPi, you will need to install multiple modules. 
 
@@ -47,69 +49,20 @@ Both Raspbian images have Python 2 preinstalled but Raspbian Lite does not have 
 now try this again python --version you should see your default is python 3 now.
 
 ### now you can run the script 
-1. chmod u+x install.sh will make the code excutable 
+#### For Usb Serial 
+1. chmod u+x Serialinstall.sh will make the code excutable 
 2. ./install.sh will make the code run 
 3. sit back and kick up your feet because install will take a bit
 
-## Manual Install 
+#### For Wifi Acces Point 
+1. chmod u+x WiFiinstall.sh will make the code excutable 
+2. ./install.sh will make the code run 
+3. sit back and kick up your feet because install will take a bit
 
-### NodeJs
-`sudo apt-get update`
 
-`sudo apt-get upgrade`
-
-`curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -`
-`sudo apt-get install -y nodejs`
-
-### Mosquitto
-`sudo apt-get mosquitto mosquitto-clients`
-
-### Python 
-
-NOTE: *If Python 3 is installed and set as the default, you can skip to the next section. You can test this by typing `python3 -V` into the terminal window.*
-
-`sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev tar wget vim`
-
-`wget https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tgz`
-
-`sudo tar zxf Python-3.8.3.tgz`
-
-`cd Python-3.8.3`
-
-`sudo ./configure --enable-optimizations`
-
-`sudo make -j 4`
-
-`sudo make altinstall`
-
-`echo "alias python=/usr/local/bin/python3.8" >> ~/.bashrc`
-
-`source ~/.bashrc`
-
-`python -V`
-
-### Install Sqlite3
-
-`sudo apt-get install sqlite3`
-
-You can initialize your database inside the project folder using these commands to create the db file and schema.
-
-`sqlite3 data.db`
-
-`CREATE TABLE clusterData(timestamp datetime, duck_id TEXT, message_id TEXT, payload TEXT, path TEXT);`
-
-### Install paho-mqtt for Python
-
-`sudo -H pip3 install --upgrade pip`
-
-`pip3 install paho-mqtt`
-
-### Install sqlite3 for Python
-
-`pip3 install sqlite3`
 
 ### RaspAp
-`curl -sL https://install.raspap.com | bash`
+
 
 # Run
 
