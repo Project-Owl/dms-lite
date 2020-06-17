@@ -24,7 +24,8 @@ The PaPa Duck is running a different Firmware then the regular ClusterDuck Proto
 
 ## Parts required
 
-- Raspberry Pi
+- Raspberry Pi (3B+ preffered)
+   - for using a pi zero you need a different setup for node.js
 - Micro SD-Card 16GB or more
   - Raspbian OS installed
 - Mouse and Keyboard
