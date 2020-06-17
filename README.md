@@ -48,7 +48,6 @@ Both Raspbian images have Python 2 preinstalled but Raspbian Lite does not have 
 
 now try this again python --version you should see your default is python 3 now.
 
-### now you can run the script 
 #### For Usb Serial 
 1. chmod u+x Serial-install.sh will make the code excutable 
 2. ./install.sh will make the code run 
