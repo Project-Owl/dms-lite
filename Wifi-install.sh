@@ -30,8 +30,8 @@ pip3 install paho-mqtt
 echo '##install sqlite3 for python'
 pip3 install sqlite3
 
-echo '##install sqlite3 for python'
-sudo npm install sqlite3 
+echo '##install node packages'
+sudo npm install s
 
 echo '##install RaspAp'
 curl --fsSL https://install.raspap.com | bash -y 
