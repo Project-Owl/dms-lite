@@ -16,19 +16,11 @@ echo '##installing Node Js now..'
 curl -fsSL https://deb.nodesource.com/setup_10.x | sudo bash -
 sudo apt-get install nodejs -y
 
-echo '##installing Mosquitto...'
-sudo apt-get install mosquitto mosquitto-clients -y
-
-
 echo '##installing Sqlite3'
 sudo apt-get install sqlite3 -y
-
-echo '##installing paho-mqtt for python'
-sudo -H pip3 install --upgrade pip
-pip3 install paho-mqtt
 
 echo '##install pyserial'
 pip install pyserial
 
-echo '##install sqlite3 for python'
-sudo npm install sqlite3 -y
+echo '##install node dependecies'
+sudo npm install 
