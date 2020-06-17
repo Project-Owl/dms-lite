@@ -37,7 +37,6 @@ The PaPa Duck is running a different Firmware then the regular ClusterDuck Proto
 ## How To Install
 The PaPi and DMS LITE both need some setup before you can start seeing your data. To turn the Raspberry Pi into the PaPi, you will need to install multiple modules. 
 
-NOTE: *You need an Internet Connection to install the packages and the DMS LITE application. After the Raspberry Pi is turned into an Access Point it doesn't have WiFi capabilities anymore and you will need a LAN connection for final setup.*
 
 ## Script Install 
 Both Raspbian images have Python 2 preinstalled but Raspbian Lite does not have python 3 preinstalled. But you will need to set you Pi to use python 3 as default.
@@ -67,6 +66,8 @@ NOTE: *You need to run the two scripts in two separate terminals.*
 1. chmod u+x WiFi-install.sh will make the code excutable 
 2. ./install.sh will make the code run 
 3. sit back and kick up your feet because install will take a bit
+
+NOTE: *You need an Internet Connection to install the packages and the DMS LITE application. After the Raspberry Pi is turned into an Access Point it doesn't have WiFi capabilities anymore and you will need a LAN connection for final setup.*
 
 After you have installed the required dependencies you can the two scripts.
 
