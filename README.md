@@ -73,6 +73,7 @@ After you have installed the required dependencies you can the two scripts.
 `python3 Wifi_sqlwriter.py`
 
 `npm run start`
+
 In your Browser go to Localhost:3000 to see the dms-lite
 
 NOTE: *You need to run the two scripts in two separate terminals.*
