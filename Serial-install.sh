@@ -13,23 +13,15 @@ echo '##upgrading all packages now...'
 sudo apt-get upgrade -y
 
 echo '##installing Node Js now..'
-curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+curl -fsSL https://deb.nodesource.com/setup_10.x | sudo bash -
 sudo apt-get install nodejs -y
-
-echo '##installing Mosquitto...'
-sudo apt-get install mosquitto mosquitto-clients -y
-
 
 echo '##installing Sqlite3'
 sudo apt-get install sqlite3 -y
 
-echo '##installing paho-mqtt for python'
-sudo -H pip3 install --upgrade pip
-pip3 install paho-mqtt
+echo '##install pyserial'
+pip install pyserial
 
-echo '##install sqlite3 for python'
-pip3 install sqlite3
-
-echo '##install RaspAp'
-curl -sL https://install.raspap.com | bash 
-
+echo '##install node dependecies'
+npm install sqlite3
+npm install 
