@@ -20,7 +20,7 @@ The PaPa Duck is running a different Firmware then the regular ClusterDuck Proto
 
 ### Local ClusterDuck Protocol Network
 
-![](public/images/PAPI-EXPLAIN.jpg)
+![](public/images/PAPI-EXPLAIN-2.jpg)
 
 ## Parts required
 
