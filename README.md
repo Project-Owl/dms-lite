@@ -3,18 +3,18 @@
  [![Slack](https://img.shields.io/badge/Join-Slack-blue)](https://www.project-owl.com/slack)
  
 ## About
-The PaPi and DMS LITE is a collaborative effort to collect all the data from a [ClusterDuck Protocol](https://github.com/Code-and-Response/ClusterDuck-Protocol) network locally. It provides a local interface to see network activity and data traffic. The PaPi was brought to life for areas when there is no internet connection available at all. The PaPi can store data and acts as a local MQTT broker to communicate with the PaPa Duck. 
+The PaPi and DMS LITE is a collaborative effort to collect all the data from a [ClusterDuck Protocol](https://github.com/Code-and-Response/ClusterDuck-Protocol) network locally. It provides a local interface to see network activity and data traffic. The PaPi was brought to life for areas when there is no internet connection available at all. The PaPi can store data and act as a local MQTT broker to communicate with the PaPa Duck. 
 
 ## How it Works
-To get your data into the PaPi there are two different ways. A USB Serial connection or by WiFi. With the Serial connection the Raspberry Pi reads the incoming messages from the serial monitor by a wired connection from the papaduck and writes the data to the database. With the Wifi connection the Raspberry pi turns into a Acces point and the Papa Ducks sends data over WiFi which then gets recieved by a MQTT broker that then writes ther data to the database.
+There are two different ways to get your data into the PaPi: using a USB Serial connection or WiFi. Using the serial connection, the Raspberry Pi reads the incoming messages from the serial monitor by a wired connection from the papaduck and writes the data into the database. Using the Wifi connection the Raspberry pi turns into an acces point. This allows the Papa Ducks to send data over WiFi to a MQTT broker that writes the data into the database.
 
 
 ### DMS LITE
-The DMS LITE is the Lightweight version of the cloud DMS, which offers more features and functionality. DMS LITE gives you simple network activity and data visuals. 
+The DMS LITE is the open source version of the cloud DMS. DMS LITE gives you simple network activity and data visuals.
 
-The PaPa Duck is running a different Firmware then the regular ClusterDuck Protocol PaPa example.
+The PaPa Duck is running a different Firmware than the regular ClusterDuck Protocol PaPa example.
 
-### Example Of ClusterDuck Protocol Network
+### Example of ClusterDuck Protocol Network
 
 ![](public/images/CDP-NETWORK-EXPLAIN.jpg)
 
@@ -29,7 +29,8 @@ The PaPa Duck is running a different Firmware then the regular ClusterDuck Proto
 - Micro SD-Card 16GB or more
   - Raspbian OS installed
 - Mouse and Keyboard
-- Wired Ethernet Connection 
+- Monitor
+- Wired Ethernet Connection
 
 - Latest Copy of [ClusterDuck Protocol](https://github.com/Code-and-Response/ClusterDuck-Protocol)
 
@@ -49,11 +50,12 @@ Both Raspbian images have Python 2 preinstalled but Raspbian Lite does not have 
 now try this again python --version you should see your default is python 3 now.
 
 #### For Usb Serial 
-1. chmod u+x Serial-install.sh will make the code excutable 
-2. ./Serial-install.sh will make the code run 
-3. sit back and kick up your feet because install will take a bit
+1. Make sure you connect the LoRa board to the Raspberry Pi.
+2. chmod u+x serial-install.sh will make the code excutable 
+3. ./Serial-install.sh will make the code run 
+4. sit back and kick up your feet because install will take a bit
 
-After you have installed the required dependencies you can the two scripts.
+After you have installed the required dependencies you can run the two scripts in two separate terminals.
 
 `python3 Serial_sqlwriter.py`
 
@@ -64,7 +66,7 @@ In your Browser go to Localhost:3000 to see the dms-lite
 NOTE: *You need to run the two scripts in two separate terminals.*
 
 #### For Wifi Acces Point 
-1. chmod u+x WiFi-install.sh will make the code excutable 
+1. chmod u+x Wifi-install.sh will make the code excutable 
 2. ./Wifi-install.sh will make the code run 
 3. sit back and kick up your feet because install will take a bit
 
