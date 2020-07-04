@@ -25,3 +25,15 @@ pip install pyserial
 echo '##install node dependecies'
 npm install sqlite3
 npm install 
+
+echo '##new terminal and  run npm'
+lxterminal -e "npm run start"& 
+
+echo '##new terminal and run python'
+lxterminal -e "python serial_sqlwriter.py"&
+
+echo '##launch chrome in kiosk mode'
+# Start Chromium in kiosk mode
+sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/chromium/'Lo$
+sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"$
+chromium-browser --disable-infobars --kiosk 'http://localhost:3000'
