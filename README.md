@@ -55,7 +55,9 @@ now try this again python --version you should see your default is python 3 now.
 3. ./Serial-install.sh will make the code run 
 4. sit back and kick up your feet because install will take a bit
 
-After you have installed the required dependencies you can run the two scripts in two separate terminals.
+The DMS Lite will automatically open in a full sized window.
+
+The next time you boot the Pi CD into the DMS-LITE folder and run the following script in two seperate terminals.
 
 `python3 Serial_sqlwriter.py`
 
