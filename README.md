@@ -39,6 +39,10 @@ The PaPa Duck is running a different Firmware than the regular ClusterDuck Proto
 ## How To Install
 The PaPi and DMS LITE both need some setup before you can start seeing your data. To turn the Raspberry Pi into the PaPi, you will need to install multiple modules. 
 
+## Prepare Heltec or TTgo Board for PaPi
+1. goto [PAPI DMS Lite Examples](https://github.com/Code-and-Response/ClusterDuck-Protocol/tree/master/examples/PaPi-DMS-Lite-Examples "DMS PAPI Examples")
+2. Select which example you need based off of your particular install.
+3. Upload the .INO and you are set to move on 
 
 ## Script Install 
 Both Raspbian images have Python 2 preinstalled but Raspbian Lite does not have python 3 preinstalled. But you will need to set you Pi to use python 3 as default.
@@ -57,11 +61,11 @@ now try this again python --version you should see your default is python 3 now.
 
 The DMS Lite will automatically open in a full sized window.
 
-The next time you boot the Pi CD into the DMS-LITE folder and run the following script in two seperate terminals.
-
-`python3 Serial_sqlwriter.py`
-
-`npm run start`
+#### After Install Run
+The next time you boot the Pi CD into the DMS-LITE folder and run the following script.
+1. chmod u+x run.sh
+2. now that you made the script executable run it by typing ./run.sh
+*** This will launch the scripts and bring you into kiosk mode. Which is full screen full resolution with no bars or anything. to exit out of this either reboot the pi or press fn f4 key to get back to desktop. ***
 
 In your Browser go to Localhost:3000 to see the dms-lite
 
