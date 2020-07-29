@@ -45,7 +45,7 @@ The PaPi and DMS LITE both need some setup before you can start seeing your data
 3. Upload the .INO and you are set to move on 
 
 ## Script Install 
-Both Raspbian images have Python 2 preinstalled but Raspbian Lite does not have python 3 preinstalled. But you will need to set you Pi to use python 3 as default.
+Both Raspbian images have Python 2 preinstalled but Raspbian Lite does not have python 3 preinstalled. But you will need to set you Pi to use python 3 as default. We recommend using the latest release of [Rasbian Desktop with recommened software](https://www.raspberrypi.org/downloads/raspberry-pi-os/).
 
 1. check your python version by running: python --version
   *** if you don't see python 3 continue on to 2.**
