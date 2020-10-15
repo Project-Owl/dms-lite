@@ -55,8 +55,8 @@ now try this again python --version you should see your default is python 3 now.
 
 #### For Usb Serial 
 1. Make sure you connect the LoRa board to the Raspberry Pi.
-2. chmod u+x serial-install.sh will make the code excutable 
-3. ./Serial-install.sh will make the code run 
+2. `chmod u+x serial-install.sh` will make the code excutable 
+3. `./Serial-install.sh` will make the code run 
 4. sit back and kick up your feet because install will take a bit
 
 The DMS Lite will automatically open in a full sized window.
