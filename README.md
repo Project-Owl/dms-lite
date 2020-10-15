@@ -72,8 +72,8 @@ In your Browser go to Localhost:3000 to see the dms-lite
 NOTE: *You need to run the two scripts in two separate terminals.*
 
 #### For Wifi Acces Point 
-1. chmod u+x Wifi-install.sh will make the code excutable 
-2. ./Wifi-install.sh will make the code run 
+1. `chmod u+x Wifi-install.sh` will make the code excutable 
+2. `./Wifi-install.sh` will make the code run 
 3. sit back and kick up your feet because install will take a bit
 
 NOTE: *You need an Internet Connection to install the packages and the DMS LITE application. After the Raspberry Pi is turned into an Access Point it doesn't have WiFi capabilities anymore and you will need a LAN connection for final setup.*
