@@ -40,7 +40,7 @@ The PaPa Duck is running a different Firmware than the regular ClusterDuck Proto
 The PaPi and DMS LITE both need some setup before you can start seeing your data. To turn the Raspberry Pi into the PaPi, you will need to install multiple modules. 
 
 ## Prepare Heltec or TTgo Board for PaPi
-1. goto [PAPI DMS Lite Examples](https://github.com/Code-and-Response/ClusterDuck-Protocol/tree/master/examples/PaPi-DMS-Lite-Examples "DMS PAPI Examples")
+1. goto [PAPI DMS Lite Examples](https://github.com/Call-for-Code/ClusterDuck-Protocol/tree/master/examples/6.PaPi-DMS-Lite-Examples "DMS PAPI Examples")
 2. Select which example you need based off of your particular install.
 3. Upload the .INO and you are set to move on 
 
