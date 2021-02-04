@@ -49,22 +49,23 @@ Both Raspbian images have Python 2 preinstalled but Raspbian Lite does not have 
 
 1. check your python version by running: python --version
   *** if you don't see python 3 continue on to 2.**
-2. nano ~/.bashrc and add this to the very bottom alias python='/usr/bin/python3'
-
-now try this again python --version you should see your default is python 3 now.
+2. nano ~/.bashrc 
+3. Add this to the very bottom: alias python='/usr/bin/python3'
+4. Close terminal and open a new one
+5. Try python --version and you should see your default is python 3
 
 #### For Usb Serial 
-1. Make sure you connect the LoRa board to the Raspberry Pi.
+1. Connect the LoRa board to the Raspberry Pi.
 2. `chmod u+x serial-install.sh` will make the code excutable 
 3. `./Serial-install.sh` will make the code run 
-4. sit back and kick up your feet because install will take a bit
+4. Sit back and kick up your feet because install will take a bit
 
 The DMS Lite will automatically open in a full sized window.
 
 #### After Install Run
 The next time you boot the Pi CD into the DMS-LITE folder and run the following script.
 1. chmod u+x run.sh
-2. now that you made the script executable run it by typing ./run.sh
+2. Now that you made the script executable run it by typing: ./run.sh
 *** This will launch the scripts and bring you into kiosk mode. Which is full screen full resolution with no bars or anything. to exit out of this either reboot the pi or press fn f4 key to get back to desktop. ***
 
 In your Browser go to Localhost:3000 to see the dms-lite
