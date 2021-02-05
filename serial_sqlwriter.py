@@ -27,7 +27,8 @@ while True:
     payload = ser.readline()
     print(payload)
     prstrip = payload.rstrip().decode('utf8')
-       print(prstrip + "---")
+       print(prstrip)
+       print("+++")
     if len(prstrip) >0:
    
       try:
