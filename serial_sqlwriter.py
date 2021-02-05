@@ -25,15 +25,12 @@ def writeToDb(theTime, duckId, messageId, payload, path):
 while True:
     theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
     payload = ser.readline()
-    print(payload)
     prstrip = payload.rstrip().decode('utf8')
-    print(prstrip)
-    print("+++")
     if len(prstrip) >0:
-   
+      print(prstrip)
       try:
         p = json.loads(prstrip)
-        writeToDb(theTime, p["DDUID"], p["MUID"], p["DATA"], p["PATH"])
+        writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
       except:
          print(prstrip)
          print("NOT CORRECT PACKET")
