@@ -31,7 +31,7 @@ echo "Installing DMS Lite dependencies"
 sudo apt install nginx sqlite3 mosquitto mosquitto-clients python3-pip nodejs -y
 
 sudo -H pip3 install --upgrade pip
-pip3 install paho-mqtt sqlite3
+pip3 install paho-mqtt pyserial
 
 npm install sqlite3
 npm install
@@ -40,9 +40,9 @@ echo "Configuring systemd services"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # Replace REPLACEPATH in service files and output a copy to /etc/systemd/system
-sudo sed -i 's/REPLACEPATH/$DIR/g' dms-lite.service > /etc/systemd/system/dms-lite.service
-sudo sed -i 's/REPLACEPATH/$DIR/g' dms-serial-python-writer.service > /etc/systemd/system/dms-serial-python-writer.service
-sudo sed -i 's/REPLACEPATH/$DIR/g' dms-wifi-python-writer.service > /etc/systemd/system/dms-wifi-python-writer.service
+sed -i 's/REPLACEPATH/$DIR/g' dms-lite.service | sudo tee /etc/systemd/system/dms-lite.service
+sed -i 's/REPLACEPATH/$DIR/g' dms-serial-python-writer.service | sudo tee /etc/systemd/system/dms-serial-python-writer.service
+sed -i 's/REPLACEPATH/$DIR/g' dms-wifi-python-writer.service | sudo /etc/systemd/system/dms-wifi-python-writer.service
 
 sudo systemctl daemon-reload
 sudo systemctl start dms-lite
