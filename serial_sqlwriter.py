@@ -11,7 +11,7 @@ dbFile = "data.db"
 ser = serial.Serial('/dev/ttyUSB0',115200)
 
    
-def writeToDb(theTime, duckId, messageId, payload, path):
+def writeToDb(theTime, duckId, messageId, payload, path, hops, duckType):
     conn = sqlite3.connect(dbFile)
     c = conn.cursor()
     print ("Writing to db...")
