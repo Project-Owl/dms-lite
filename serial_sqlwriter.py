@@ -25,6 +25,7 @@ def writeToDb(theTime, duckId, messageId, payload, path):
 while True:
     theTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
     payload = ser.readline()
+    print(payload)
     prstrip = payload.rstrip().decode('utf8')
     if len(prstrip) >0:
       print(prstrip)
