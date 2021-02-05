@@ -27,8 +27,9 @@ while True:
     payload = ser.readline()
     print(payload)
     prstrip = payload.rstrip().decode('utf8')
+       print(prstrip + "---")
     if len(prstrip) >0:
-      print(prstrip)
+   
       try:
         p = json.loads(prstrip)
         writeToDb(theTime, p["DDUID"], p["MUID"], p["DATA"], p["PATH"])
