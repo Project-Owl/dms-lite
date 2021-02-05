@@ -1,0 +1,9 @@
+[Unit]
+Description=DMS Lite Serial Python SQL Writer
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 REPLACEPATH/serial_sqlwriter.py
+
+[Install]
+WantedBy=multi-user.target

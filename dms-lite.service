@@ -1,0 +1,9 @@
+[Unit]
+Description=DMS Lite Express Server start
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node REPLACEPATH/bin/www
+
+[Install]
+WantedBy=multi-user.target
