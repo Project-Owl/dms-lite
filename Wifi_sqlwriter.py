@@ -22,17 +22,17 @@ def on_message(client, userdata, msg):
     result = (theTime + "\t" + str(msg.payload))
     print(msg.topic + ":\t" + result)
     if (msg.topic == status_topic):
-        text = json.loads(msg.payload)
+        p = json.loads(msg.payload)
         print (json.dumps(text))
-        writeToDb(theTime, text["DeviceID"], text["MessageID"], text["Payload"], text["path"])
+        writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"],p["hops"],p["duckType"])
     return
 
-def writeToDb(theTime, duckId, messageId, payload, path):
+def writeToDb(theTime, duckId, messageId, payload, path, hops, duckType):
     conn = sqlite3.connect(dbFile)
     c = conn.cursor()
     print ("Writing to db...")
     try:
-        c.execute("INSERT INTO clusterData VALUES (?,?,?,?,?)", (theTime, duckId, messageId, payload, path))
+         c.execute("INSERT INTO clusterData VALUES (?,?,?,?,?,?,?)", (theTime, duckId, messageId, payload, path, hops, duckType))
         conn.commit()
         conn.close()
     except Error as e:
@@ -44,13 +44,15 @@ client.on_message = on_message
 
 client.connect("127.0.1.1", 1883, 60)
 
+      
 try:
     db = sqlite3.connect(dbFile)
-    db.cursor().execute("CREATE TABLE IF NOT EXISTS clusterData (timestamp datetime, duck_id TEXT, message_id TEXT, payload TEXT, path TEXT)")
+    db.cursor().execute("CREATE TABLE IF NOT EXISTS clusterData (timestamp datetime, duck_id TEXT, message_id TEXT, payload TEXT, path TEXT, hops INT, duck_type INT)")
     db.commit()
     db.close()
 except  Error as e:
     print(e)
+
 
 # Blocking call that processes network traffic, dispatches callbacks and
 # handles reconnecting.
