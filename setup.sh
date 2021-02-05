@@ -39,16 +39,25 @@ npm install
 echo "Configuring systemd services"
 
 # Replace REPLACEPATH in service files and output a copy to /etc/systemd/system
-sed -i "s|REPLACEPATH|$PWD|g" dms-lite.service
-sed -i "s|REPLACEPATH|$PWD|g" dms-serial-python-writer.service
-sed -i "s|REPLACEPATH|$PWD|g" dms-wifi-python-writer.service
+sudo sed -i "s|REPLACEPATH|$PWD|g" dms-lite.service > /etc/systemd/system/dms-lite.service
+sudo sed -i "s|REPLACEPATH|$PWD|g" dms-serial-python-writer.service > /etc/systemd/system/dms-serial-python-writer.service
+sudo sed -i "s|REPLACEPATH|$PWD|g" dms-wifi-python-writer.service > /etc/systemd/system/dms-wifi-python-writer.service
 
-sudo cp dms-lite.service /etc/systemd/system/dms-lite.service
-sudo cp dms-serial-python-writer.service /etc/systemd/system/dms-serial-python-writer.service
-sudo cp dms-wifi-python-writer.service /etc/systemd/system/dms-wifi-python-writer.service
+#sudo cp dms-lite.service /etc/systemd/system/dms-lite.service
+#sudo cp dms-serial-python-writer.service /etc/systemd/system/dms-serial-python-writer.service
+#sudo cp dms-wifi-python-writer.service /etc/systemd/system/dms-wifi-python-writer.service
 
 sudo systemctl daemon-reload
+
+# Make sure new services are set to run on boot
+sudo systemctl enable dms-lite
+sudo systemctl enable dms-serial-python-writer
+sudo systemctl enable dms-wifi-python-writer
+
+# Start the services now
 sudo systemctl start dms-lite
+sudo systemctl start dms-serial-python-writer
+sudo systemctl start dms-wifi-python-writer
 
 # After this initial setup is all completed, let's create this file
 # The presence of it means we have already run this script and it
