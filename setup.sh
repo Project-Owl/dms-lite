@@ -37,7 +37,6 @@ npm install sqlite3
 npm install
 
 echo "Configuring systemd services"
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # Replace REPLACEPATH in service files and output a copy to /etc/systemd/system
 sed -i "s|REPLACEPATH|$PWD|g" dms-lite.service
