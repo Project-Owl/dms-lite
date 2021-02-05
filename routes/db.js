@@ -32,7 +32,7 @@ function getAllData() {
    return new Promise((resolve, reject) => {
       openDB();
       let sql = 'SELECT timestamp, duck_id, message_id, payload, path, hops, duck_type  FROM clusterData ORDER BY timestamp DESC'
-
+      console.log(sql)
       db.all(sql, (err, rows) => {
          if (err) {
             reject(err);
