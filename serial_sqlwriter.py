@@ -33,6 +33,7 @@ while True:
         writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
       except:
          print(prstrip)
+         print("NOT CORRECT PACKET")
         
         
       
