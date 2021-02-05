@@ -40,9 +40,13 @@ echo "Configuring systemd services"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # Replace REPLACEPATH in service files and output a copy to /etc/systemd/system
-sed -i 's/REPLACEPATH/$DIR/g' dms-lite.service | sudo tee /etc/systemd/system/dms-lite.service
-sed -i 's/REPLACEPATH/$DIR/g' dms-serial-python-writer.service | sudo tee /etc/systemd/system/dms-serial-python-writer.service
-sed -i 's/REPLACEPATH/$DIR/g' dms-wifi-python-writer.service | sudo /etc/systemd/system/dms-wifi-python-writer.service
+sed -i 's/REPLACEPATH/$DIR/g' dms-lite.service
+sed -i 's/REPLACEPATH/$DIR/g' dms-serial-python-writer.service
+sed -i 's/REPLACEPATH/$DIR/g' dms-wifi-python-writer.service
+
+sudo cp dms-lite.service /etc/systemd/system/dms-lite.service
+sudo cp dms-serial-python-writer.service /etc/systemd/system/dms-serial-python-writer.service
+sudo cp dms-wifi-python-writer.service /etc/systemd/system/dms-wifi-python-writer.service
 
 sudo systemctl daemon-reload
 sudo systemctl start dms-lite
