@@ -30,7 +30,7 @@ while True:
       print(prstrip)
       try:
         p = json.loads(prstrip)
-        writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"])
+        writeToDb(theTime, p["DDUID"], p["MUID"], p["DATA"], p["PATH"])
       except:
          print(prstrip)
          print("NOT CORRECT PACKET")
