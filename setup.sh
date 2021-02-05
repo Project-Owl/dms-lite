@@ -4,6 +4,11 @@
 # Written by @hawk4031
 #######################################
 
+if [ "$EUID" -ne 0 ]; then
+	echo "This script requires elevated privileges to run. Please re-run with sudo"
+	return 0;
+fi
+
 if [ -f "~/.dms/setupRun" ]; then
 	echo "This setup has already been run. Exiting."
 	return 0
