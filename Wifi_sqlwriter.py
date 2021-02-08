@@ -22,11 +22,11 @@ def on_message(client, userdata, msg):
 
     result = (theTime + "\t" + str(msg.payload))
     print(msg.topic + ":\t" + result)
-    if (msg.topic == status_topic):
-        p = json.loads(msg.payload)
-        print (json.dumps(text))
-        print("New message recieved")
-        writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"],p["hops"],p["duckType"])
+    # if (msg.topic == status_topic):
+    p = json.loads(msg.payload)
+    print (json.dumps(text))
+    print("New message recieved")
+    writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"],p["hops"],p["duckType"])
     return
 
 def writeToDb(theTime, duckId, messageId, payload, path, hops, duckType):
