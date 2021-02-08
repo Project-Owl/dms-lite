@@ -36,6 +36,7 @@ def writeToDb(theTime, duckId, messageId, payload, path, hops, duckType):
         conn.commit()
         conn.close()
     except Error as e:
+        print("Not Correct Packet")
         print(e)
 
 client = mqtt.Client()
