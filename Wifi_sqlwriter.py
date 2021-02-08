@@ -4,7 +4,7 @@ import sqlite3
 from sqlite3 import Error
 import json
 
-status_topic = "status"
+status_topic = "#"
 dbFile = "data.db"
 
 # The callback for when the client receives a CONNACK response from the server.
