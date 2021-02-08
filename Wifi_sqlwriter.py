@@ -33,7 +33,7 @@ def writeToDb(theTime, duckId, messageId, payload, path, hops, duckType):
     c = conn.cursor()
     print ("Writing to db...")
     try:
-         c.execute("INSERT INTO clusterData VALUES (?,?,?,?,?,?,?)", (theTime, duckId, messageId, payload, path, hops, duckType))
+        c.execute("INSERT INTO clusterData VALUES (?,?,?,?,?,?,?)", (theTime, duckId, messageId, payload, path, hops, duckType))
         conn.commit()
         conn.close()
     except Error as e:
