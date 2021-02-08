@@ -25,6 +25,7 @@ def on_message(client, userdata, msg):
     if (msg.topic == status_topic):
         p = json.loads(msg.payload)
         print (json.dumps(text))
+        print("New message recieved")
         writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"],p["hops"],p["duckType"])
     return
 
