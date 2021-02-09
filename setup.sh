@@ -4,30 +4,34 @@
 # Written by @hawk4031
 #######################################
 
-if [ "$EUID" -ne 0 ]; then
-	echo "This script requires elevated privileges to run. Please re-run with sudo"
-	exit
-fi
+# Colors
+CNC='\033[m'
+CBWHT='\033[1;37m'
+CBRED='\033[1;31m'
 
 if [ -f "~/.dms/setupRun" ]; then
-	echo "This setup has already been run. Exiting."
-	exit
+	printf "${CBWHT}This setup has already been run. Exiting.${CNC}"
+	exit 1
 fi
 
-echo "Changing default python to python3 for current user"
-grep -qxF 'alias python="/usr/bin/python3"' ~/.bashrc || echo 'alias python="/usr/bin/python3"' >> ~/.bashrc
-source ~/.bashrc
+errormsg() {
+	printf 1>&2 "${CBRED}Error:${CNC} %s\n" "$*"
+	exit 1
+}
 
-echo "Gathering NodeJS information"
+printf "${CBWHT}Gathering NodeJS information${CNC} \n"
 curl -fsSL https://deb.nodesource.com/setup_14.x | sudo bash -
 
-echo "Updating package databases"
+printf "${CBWHT}Updating package databases${CNC} \n"
 sudo apt update -y
 
-echo "Upgrading packages"
+printf "${CBWHT}Upgrading packages${CNC} \n"
 sudo apt upgrade -y
 
-echo "Installing DMS Lite dependencies"
+printf "${CBWHT}Performing dist-upgrade${CNC} \n"
+sudo apt dist-upgrade -y
+
+printf "${CBWHT}Installing DMS Lite dependencies{$CNC}v \n"
 sudo apt install nginx sqlite3 mosquitto mosquitto-clients python3-pip nodejs -y
 
 sudo -H pip3 install --upgrade pip
@@ -36,12 +40,12 @@ pip3 install paho-mqtt pyserial
 npm install sqlite3
 npm install
 
-echo "Configuring systemd services"
+printf "${CBWHT}Configuring systemd services${CNC} \n"
 
 # Replace REPLACEPATH in service files and output a copy to /etc/systemd/system
-sudo sed -i "s|REPLACEPATH|$PWD|g" dms-lite.service > /etc/systemd/system/dms-lite.service
-sudo sed -i "s|REPLACEPATH|$PWD|g" dms-serial-python-writer.service > /etc/systemd/system/dms-serial-python-writer.service
-sudo sed -i "s|REPLACEPATH|$PWD|g" dms-wifi-python-writer.service > /etc/systemd/system/dms-wifi-python-writer.service
+sed -e "s|REPLACEPATH|$PWD|g" dms-lite.service | sudo tee /etc/systemd/system/dms-lite.service
+sed -e "s|REPLACEPATH|$PWD|g" dms-serial-python-writer.service | sudo tee /etc/systemd/system/dms-serial-python-writer.service
+sed -e "s|REPLACEPATH|$PWD|g" dms-wifi-python-writer.service | sudo tee /etc/systemd/system/dms-wifi-python-writer.service
 
 #sudo cp dms-lite.service /etc/systemd/system/dms-lite.service
 #sudo cp dms-serial-python-writer.service /etc/systemd/system/dms-serial-python-writer.service
@@ -65,3 +69,5 @@ sudo systemctl start dms-wifi-python-writer
 # script.
 mkdir ~/.dms
 touch ~/.dms/setupRun
+
+printf "${CBWHT}Setup is complete!{$CNC} \n"
