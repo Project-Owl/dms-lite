@@ -17,6 +17,8 @@
 		      			<th>Message ID</th>
 		      			<th>Path</th>
 		      			<th>Payload</th>
+		      			<th>Hops</th>
+		      			<th>Duck type</th>
 		      		</thead>
 		      		<tbody>
 					<% something.forEach(function(duck) { %>
@@ -26,6 +28,8 @@
 		      				<td><%= duck.message_id %></td>
 		      				<td><%= duck.path %></td>
 		      				<td><%= duck.payload %></td>
+		      				<td><%= duck.hops %></td>
+		      				<td><%= duck.duck_type%></td>
 		      			</tr>
 					<% }); %>
 
