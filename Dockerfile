@@ -1,17 +1,7 @@
-FROM node:15
+FROM python:3
 
-WORKDIR /app 
+ADD serial_sqlwriter.py /
 
-COPY package.json /app
+RUN pip install pyserial
 
-RUN npm install sqlite3
-
-RUN npm install
-
-COPY . /app
-
-CMD node ./bin/www
-
-#port in which App is running at Localhost:3000
-EXPOSE 3000
-
+CMD [ "python", "./serial_sqlwriter.py" ]
