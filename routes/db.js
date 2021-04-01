@@ -11,11 +11,11 @@ closeDB();
 // CREATE TABLE clusterData(timestamp datetime, duck_id TEXT, message_id TEXT, payload TEXT, path TEXT);
 
 function openDB() {
-   db = new sqlite3.Database('data.db', (err) => {
+   db = new sqlite3.Database('./db/data.db', (err) => {
       if (err) {
          console.error(err.message);
       }
-      console.log('Connected to data.db');
+      console.log('Connected to database');
    });
 }
 

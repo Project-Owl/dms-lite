@@ -1,7 +1,7 @@
 {
   "name": "dms-lite",
   "version": "1.0.0",
-  "description":"Lite version of Project Owl Data Management System",
+  "description": "Lite version of Project Owl Data Management System",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
