@@ -92,7 +92,7 @@ function getLastCount(count) {
 function getDuckPlusData() {
    return new Promise((resolve, reject) => {
       openDB();
-      let sql = 'SELECT timestamp, duck_id, message_id, payload, path, hops, duck_type  FROM ( SELECT ROW_NUMBER() OVER ( PARTITION BY duck_id ORDER BY timestamp DESC ) RowNum, timestamp, duck_id, message_id, payload, path FROM clusterData ) WHERE RowNum = 1;'
+      let sql = 'SELECT timestamp, duck_id, message_id, payload, path, hops, duck_type  FROM ( SELECT ROW_NUMBER() OVER ( PARTITION BY duck_id ORDER BY timestamp DESC ) RowNum, timestamp, duck_id, message_id, payload, path, hops, duck_type  FROM clusterData ) WHERE RowNum = 1;'
 
       db.all(sql, (err, rows) => {
          if (err) {
