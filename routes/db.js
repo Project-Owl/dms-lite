@@ -104,5 +104,18 @@ function getDuckPlusData() {
    });
 }
 
+function deleteAllData() {
+   return new Promise((resolve, reject) => {
+      openDB();
+      let sql = 'DELETE from clusterData;'
+      db.run(sql,function(err) {
+         if (err) {
+           reject(err);
+         }
+       });
+      closeDB();
+   });
+}
 
-module.exports = {getAllData, getDataByDuckId, getUniqueDucks, getLastCount, getDuckPlusData};
+
+module.exports = {getAllData, getDataByDuckId, getUniqueDucks, getLastCount, getDuckPlusData,deleteAllData};

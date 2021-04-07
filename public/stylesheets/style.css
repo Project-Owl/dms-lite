@@ -211,6 +211,19 @@ body{
 	padding: 1em;
 }
 
+#settings button{
+	background-color:#05172d; 
+	Color: #f2f2f2; 
+	border:none; 
+	width:13em; 
+	padding:10px;
+}
+
+#settings button:hover{
+    background-color: #ddd;
+    color: #05172d;
+}
+
 
 
 

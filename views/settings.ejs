@@ -12,6 +12,17 @@
                   <h4 id="main-text">Settings</h4>
 		      </div>
 		  </div>
+      <div class="row">
+        <div class="col-sm-12">
+                <button id="db-reset">Reset Database</button>
+                <script>
+                $('#db-reset').click(function(){
+                  $.post('/settings/db-reset')
+              });
+                </script>
+
+        </div>
+    </div>
 	    </div>
 	</div>
     <%- include partials/footer.ejs %>
