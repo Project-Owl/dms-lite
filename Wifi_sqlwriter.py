@@ -29,12 +29,12 @@ def on_message(client, userdata, msg):
     writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"],p["hops"],p["duckType"])
     return
 
-def writeToDb(theTime, duckId, messageId, payload, path, hops, duckType):
+def writeToDb(theTime, duckId, topic, messageId, payload, path, hops, duckType):
     conn = sqlite3.connect(dbFile)
     c = conn.cursor()
     print ("Writing to db...")
     try:
-        c.execute("INSERT INTO clusterData VALUES (?,?,?,?,?,?,?)", (theTime, duckId, messageId, payload, path, hops, duckType))
+        c.execute("INSERT INTO clusterData VALUES (?,?,?,?,?,?,?,?)", (theTime, duckId, topic, messageId, payload, path, hops, duckType))
         conn.commit()
         conn.close()
     except Error as e:
@@ -50,7 +50,7 @@ client.connect("127.0.1.1", 1883, 60)
       
 try:
     db = sqlite3.connect(dbFile)
-    db.cursor().execute("CREATE TABLE IF NOT EXISTS clusterData (timestamp datetime, duck_id TEXT, message_id TEXT, payload TEXT, path TEXT, hops INT, duck_type INT)")
+    db.cursor().execute("CREATE TABLE IF NOT EXISTS clusterData (timestamp datetime, duck_id TEXT, topic TEXT, message_id TEXT, payload TEXT, path TEXT, hops INT, duck_type INT)")
     db.commit()
     db.close()
 except  Error as e:
