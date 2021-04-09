@@ -5,6 +5,7 @@
     <%- include partials/nav.ejs %>
   </head>
   <body >
+	<script src="/stylesheets/tablefilter/tablefilter.js"></script>
   	<div id="data">
 	  	<div class="container">
 		    <div class="row">
@@ -48,5 +49,19 @@
 		  window.location.reload();
 	  }
 	  setInterval(reloadThePage,8000)
+
+	var tf = new TableFilter(document.querySelector('.table'), {
+		state: {
+          types: ['hash'],
+          filters: true
+        },
+		//extensions:[{
+        //    name: 'sort'
+        //  }],
+		col_0: 'select',
+		col_2: 'select',
+		col_7: 'select'
+	});
+	tf.init();
   </script>
 </html>
