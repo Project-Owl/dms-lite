@@ -1,0 +1,19 @@
+version: "3.3"  # optional since v1.27.0
+services:
+  web:
+    build:
+      dockerfile: Dockerfile
+      context: ./dms-lite
+    ports:
+      - "3000:3000"
+    volumes:
+      - "${DATABASE_FILE}:/db"
+
+  serialwriter:
+      build:
+        dockerfile: Dockerfile
+        context: ./DMSPY
+      devices:
+        - "/dev/ttyUSB0:/dev/ttyUSB0"
+     
+  
