@@ -2,8 +2,8 @@ DMS Lite Docker Pi V 1.0
 
 Pre-requirements: 
 -
-- You must install docker for your host operating system. To do this please go to the ffficial install website: [Install Docker](https://docs.docker.com/get-docker/)
-- Run the script Pysqlite: This will  check if database exist and if not create it with the correct format. 
+- You must install docker for your host operating system. To do this please go to the official install website: [Install Docker](https://docs.docker.com/get-docker/)
+- Run the script Pysqlite: This will check if database exist and if not create it with the correct format. 
 
 **Using DMS-Lite Docker**
 - You will notice there is a root folder and then two sub-folders DMS-Lite and DMSPY. DMS-Lite is where your Docker setup for the web portion of dms lite. DMSPY is the python code that is needed to send data from your plugged in duck to the database.    
