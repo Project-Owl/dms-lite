@@ -26,7 +26,7 @@ def on_message(client, userdata, msg):
     p = json.loads(msg.payload)
     print (json.dumps(p))
     print("New message recieved")
-    writeToDb(theTime, p["DeviceID"], p["MessageID"], p["Payload"], p["path"],p["hops"],p["duckType"])
+    writeToDb(theTime, p["DeviceID"], p["topic"], p["MessageID"], p["Payload"], p["path"],p["hops"],p["duckType"])
     return
 
 def writeToDb(theTime, duckId, topic, messageId, payload, path, hops, duckType):
