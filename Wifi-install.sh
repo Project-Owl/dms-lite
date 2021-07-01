@@ -21,7 +21,6 @@ sudo apt-get install -y nodejs
 echo '##installing Mosquitto...'
 sudo apt-get install mosquitto mosquitto-clients -y
 
-
 echo '##installing Sqlite3'
 sudo apt-get install sqlite3 -y
 
@@ -34,4 +33,5 @@ npm install sqlite3
 npm install 
 
 echo '##install RaspAp'
-curl --fsSL https://install.raspap.com | bash 
+curl -fsSL https://install.raspap.com | bash
+
