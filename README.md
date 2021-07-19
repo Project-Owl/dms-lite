@@ -1,6 +1,10 @@
 ![logo](public/images/DMS-LITE.png)
 
  [![Slack](https://img.shields.io/badge/Join-Slack-blue)](https://www.project-owl.com/slack)
+
+# Deprecation Notice
+This project is no longer actively worked on in favor of the new version made for Docker.
+Consider looking at [dms-lite-docker](https://github.com/Project-Owl/dms-lite-docker)
  
 ## NEW DOCKER VERSION AVAILABLE [HERE](https://github.com/Project-Owl/dms-lite-docker)
  This repository is not being maintained anymore and Pull requestes need to be made to the [new](https://github.com/Project-Owl/dms-lite-docker) repository.
