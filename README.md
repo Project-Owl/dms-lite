@@ -4,10 +4,8 @@
 
 # Deprecation Notice
 This project is no longer actively worked on in favor of the new version made for Docker.
-Consider looking at [dms-lite-docker](https://github.com/Project-Owl/dms-lite-docker)
- 
-## NEW DOCKER VERSION AVAILABLE [HERE](https://github.com/Project-Owl/dms-lite-docker)
- This repository is not being maintained anymore and Pull requestes need to be made to the [new](https://github.com/Project-Owl/dms-lite-docker) repository.
+NEW DOCKER VERSION AVAILABLE [HERE](https://github.com/Project-Owl/dms-lite-docker)
+
  
 ## About
 The PaPi and DMS LITE is a collaborative effort to collect all the data from a [ClusterDuck Protocol](https://github.com/Code-and-Response/ClusterDuck-Protocol) network locally. It provides a local interface to see network activity and data traffic. The PaPi was brought to life for areas when there is no internet connection available at all. The PaPi can store data and act as a local MQTT broker to communicate with the PaPa Duck. 
